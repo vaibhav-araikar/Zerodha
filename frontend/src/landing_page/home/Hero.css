@@ -1,0 +1,14 @@
+.signup-button {
+  width: 15%;
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.signup-button:hover {
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
