@@ -4,7 +4,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom pl-5">
-      <div className="container py-3">
+      <div className="container p-2">
         <a className="navbar-brand" href="#">
           <img
             src="media/logo.svg"
