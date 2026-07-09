@@ -176,6 +176,25 @@ function Footer() {
             (RBI).
           </p>
         </div>
+
+        <div className="bottom-footer">
+          <ul
+            className="d-flex justify-content-between list-unstyled p-2"
+            style={{ fontSize: ".75rem", color: "#9b9b9b" }}
+          >
+            <li>NSE</li>
+            <li>BSE</li>
+            <li>MCX</li>
+            <li>MSE</li>
+            <li>Terms & conditions</li>
+            <li>Policies & procedures</li>
+            <li>Privacy policy</li>
+            <li>Disclosure</li>
+            <li>For investor's attention</li>
+            <li>Investor charter</li>
+            <li>Sitemap</li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
