@@ -8,7 +8,7 @@ function Hero() {
         <h1 className="mt-5">Invest in everything</h1>
         <p>
           Online platform to invest in stocks, derivatives, mutual funds, and
-          more
+          moreeeeeeeeee
         </p>
         <div className="text-center mb-5">
           <button className="signup-button btn btn-primary fs-5">
