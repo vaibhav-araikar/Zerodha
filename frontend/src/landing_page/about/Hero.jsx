@@ -1,4 +1,5 @@
 import React from "react";
+import "./Hero.css";
 
 function Hero() {
   return (
@@ -12,7 +13,10 @@ function Hero() {
 
       <hr />
 
-      <div className="row p-5 mt-5">
+      <div
+        className="row p-5 mt-5 text-muted team-row"
+        style={{ lineHeight: "1.8", fontSize: "1.2em" }}
+      >
         <div className="col-6 p-5">
           <p>
             We kick-started operations on the 15th of August, 2010 with the goal
@@ -37,7 +41,7 @@ function Hero() {
             community initiatives to empower retail traders and investors.
           </p>
           <p>
-            <a href="#">Rainmatter</a>, our fintech fund and incubator, has
+            <a href="">Rainmatter</a>, our fintech fund and incubator, has
             invested in several fintech startups with the goal of growing the
             Indian capital markets.
           </p>
