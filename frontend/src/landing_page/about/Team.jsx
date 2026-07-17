@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <div className="container border-top">
       <div className="row p-5 mt-5 mb-5">
-        <h1 className="fs-4 text-center">People</h1>
+        <h1 className="fs-2 text-center">People</h1>
       </div>
 
       <hr />
