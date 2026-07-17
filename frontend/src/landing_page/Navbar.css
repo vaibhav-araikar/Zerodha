@@ -9,3 +9,7 @@
 .nav-logo-image {
   width: 20%;
 }
+
+.nav-link:hover {
+  color: #387ed1 !important;
+}

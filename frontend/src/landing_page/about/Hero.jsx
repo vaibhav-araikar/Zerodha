@@ -14,7 +14,7 @@ function Hero() {
       <hr />
 
       <div
-        className="row p-5 mt-5 text-muted team-row"
+        className="row p-5 mt-5 team-row"
         style={{ lineHeight: "1.8", fontSize: "1.2em" }}
       >
         <div className="col-6 p-5">
@@ -41,9 +41,11 @@ function Hero() {
             community initiatives to empower retail traders and investors.
           </p>
           <p>
-            <a href="">Rainmatter</a>, our fintech fund and incubator, has
-            invested in several fintech startups with the goal of growing the
-            Indian capital markets.
+            <a href="" className="rainmatter-link">
+              Rainmatter
+            </a>
+            , our fintech fund and incubator, has invested in several fintech
+            startups with the goal of growing the Indian capital markets.
           </p>
           <p>
             And yet, we are always up to something new every day. Catch up on

@@ -1,4 +1,9 @@
-.team-row {
-  line-height: 1.8rem;
-  font-size: 1.2rem;
+.rainmatter-link {
+  font-size: inherit;
+  color: rgb(57, 57, 165) !important;
+  text-decoration: none;
+}
+
+.rainmatter-link:hover {
+  color: #000000 !important;
 }
