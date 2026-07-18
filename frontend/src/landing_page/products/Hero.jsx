@@ -33,7 +33,12 @@ function Hero() {
         appStore="/appleappstore"
       />
 
-      <RightSection />
+      <RightSection
+        productName="Console"
+        productDescription="The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations."
+        learnMore="/learnmore"
+        imageURL="media/console.png"
+      />
 
       <LeftSection
         imageURL="media/coin.png"
@@ -44,7 +49,12 @@ function Hero() {
         appStore="/appleappstore"
       />
 
-      <RightSection />
+      <RightSection
+        productName="Kite Connect API"
+        productDescription="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase."
+        kiteConnect="/kiteConnect"
+        imageURL="media/kiteconnect.png"
+      />
 
       <LeftSection
         imageURL="media/kite.png"
