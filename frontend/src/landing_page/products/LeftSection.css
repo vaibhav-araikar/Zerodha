@@ -1,0 +1,130 @@
+/* ==============================
+   Product Section
+================================ */
+
+.product-section {
+  padding: 90px 0;
+}
+
+/* ==============================
+   Image
+================================ */
+
+.product-image {
+  max-width: 90%;
+}
+
+/* ==============================
+   Content
+================================ */
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #424242;
+  margin-bottom: 25px;
+}
+
+.product-description {
+  color: #666;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  max-width: 430px;
+}
+
+/* ==============================
+   Product Links
+================================ */
+
+.product-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ==============================
+   Store Links
+================================ */
+
+.store-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.store-links img {
+  height: 42px;
+  transition: transform 0.3s ease;
+}
+
+.store-links img:hover {
+  transform: scale(1.05);
+}
+
+/* ==============================
+   Links
+================================ */
+
+.text-link {
+  color: #387ed1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.text-link i {
+  margin-left: 6px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.text-link:hover {
+  color: #1f6fbf;
+}
+
+.text-link:hover i {
+  transform: translateX(5px);
+}
+
+/* ==============================
+   Responsive
+================================ */
+
+@media (max-width: 992px) {
+  .product-section {
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .product-image {
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+
+  .product-content {
+    align-items: center;
+  }
+
+  .product-description {
+    max-width: 100%;
+  }
+
+  .product-links,
+  .store-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .product-title {
+    font-size: 2.2rem;
+  }
+}
