@@ -1,7 +1,8 @@
 import React from "react";
 
 function RightSection() {
-  return <h1>Right Section</h1>;
+  return;
+  <div className="container"></div>;
 }
 
 export default RightSection;
