@@ -1,0 +1,130 @@
+/* ==========================
+      Universe
+========================== */
+
+.universe-section {
+  padding: 70px 0;
+}
+
+/* Heading */
+
+.universe-title {
+  font-size: 44px;
+  font-weight: 500;
+  color: #424242;
+  margin-bottom: 18px;
+}
+
+.universe-subtitle {
+  font-size: 20px;
+  color: #666;
+  font-weight: 400;
+
+  margin-bottom: 65px;
+}
+
+/* Cards */
+
+.universe-card {
+  text-align: center;
+
+  margin-bottom: 65px;
+
+  padding: 0 40px;
+}
+
+/* Paragraph */
+
+.universe-card p {
+  width: 240px;
+
+  margin: 22px auto 0;
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 26px;
+
+  font-weight: 400;
+}
+
+/* Logos */
+
+.fundhouse {
+  width: 215px;
+}
+
+.sensibull {
+  width: 235px;
+}
+
+.tijori {
+  width: 175px;
+}
+
+.streak {
+  width: 170px;
+}
+
+.smallcase {
+  width: 195px;
+}
+
+.ditto {
+  width: 150px;
+}
+
+/* Hover */
+
+.universe-card img {
+  transition: 0.25s;
+}
+
+.universe-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Button */
+
+.universe-btn {
+  background: #387ed1;
+
+  color: white !important;
+
+  width: 210px;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  transition: 0.25s;
+}
+
+.universe-btn:hover {
+  background: #222;
+
+  color: white;
+}
+
+/* Mobile */
+
+@media (max-width: 992px) {
+  .universe-card {
+    padding: 0 15px;
+  }
+
+  .universe-card p {
+    width: 100%;
+  }
+
+  .universe-btn {
+    width: 100%;
+  }
+}
