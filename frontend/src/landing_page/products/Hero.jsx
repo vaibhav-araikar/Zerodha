@@ -64,11 +64,10 @@ function Hero() {
         appStore="/appleappstore"
       />
 
-      <p>
+      <p className="text-center fs-5">
         Want to know more about our technology stack? Check out the{" "}
         <a href="" className="text-link">
-          Zerodha.tech
-          <i className="fa-solid fa-arrow-right"></i>
+          Zerodha.tech{" "}
         </a>
         blog.
       </p>
