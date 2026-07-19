@@ -65,7 +65,11 @@ function Hero() {
       />
 
       <p>
-        Want to know more about our technology stack? Check out the Zerodha.tech
+        Want to know more about our technology stack? Check out the{" "}
+        <a href="" className="text-link">
+          Zerodha.tech
+          <i className="fa-solid fa-arrow-right"></i>
+        </a>
         blog.
       </p>
 
