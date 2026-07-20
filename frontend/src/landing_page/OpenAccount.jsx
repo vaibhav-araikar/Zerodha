@@ -10,7 +10,7 @@ function OpenAccount() {
           F&O trades.
         </p>
         <div className="text-center mb-5">
-          <button className="signup-button btn btn-primary fs-5">
+          <button className="signup-button btn btn-primary fs-5 text-white">
             Sign up Now
           </button>
         </div>
