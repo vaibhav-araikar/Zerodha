@@ -10,7 +10,8 @@ function Brokerage() {
   return (
     <div className="container brokerage-section">
       {/* Tabs */}
-      <div className="brokerage-tabs text-center">
+
+      <div className="brokerage-tabs">
         <button
           className={activeTab === "equity" ? "active" : ""}
           onClick={() => setActiveTab("equity")}
@@ -32,9 +33,11 @@ function Brokerage() {
           Commodity
         </button>
       </div>
-      {/* Table */}
-      <div className="table-responsive mt-4 border">
-        <table className="table brokerage-table">
+
+      {/* Brokerage Table */}
+
+      <div className="table-responsive">
+        <table className="brokerage-table">
           <thead>
             <tr>
               {currentData.headers.map((heading, index) => (
@@ -54,21 +57,27 @@ function Brokerage() {
           </tbody>
         </table>
       </div>
-      <p className="brokerage-calculator text-center">
+
+      {/* Brokerage Calculator */}
+
+      <p className="brokerage-calculator">
         <a
           href="https://zerodha.com/brokerage-calculator/"
           target="_blank"
           rel="noreferrer"
           className="brokerage-link"
         >
-          Calculate your costs upfront{" "}
+          Calculate your costs upfront
         </a>{" "}
-        using our brokerage calculator
+        using our brokerage calculator.
       </p>
-      <div className="account-opening-section">
-        <h2 className="account-heading">Charges for account opening</h2>
 
-        <table className="account-table">
+      {/* Account Opening */}
+
+      <section className="pricing-section">
+        <h2>Charges for account opening</h2>
+
+        <table className="pricing-table">
           <thead>
             <tr>
               <th>Type of account</th>
@@ -116,14 +125,20 @@ function Brokerage() {
             </tr>
           </tbody>
         </table>
-      </div>
+      </section>
 
-      {/* Demat AMC section = Annual Maintenance Charge  */}
-      <div className="demat-amc-section mt-5 pt-4">
-        <h2 className="mb-5">Demat AMC (Annual Maintenance Charge)</h2>
-        <p className="mb-5">Free for first year*</p>
-        <p>From second year onwards, for BSDA accounts:</p>
-        <table className="account-table">
+      {/* Demat AMC */}
+
+      <section className="pricing-section">
+        <h2>Demat AMC (Annual Maintenance Charge)</h2>
+
+        <div className="info-box">Free for first year*</div>
+
+        <p className="section-text">
+          From second year onwards, for BSDA accounts:
+        </p>
+
+        <table className="pricing-table">
           <thead>
             <tr>
               <th>Value of holdings</th>
@@ -154,7 +169,7 @@ function Brokerage() {
             </tr>
           </tbody>
         </table>
-      </div>
+      </section>
     </div>
   );
 }
