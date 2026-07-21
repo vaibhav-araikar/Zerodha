@@ -1,0 +1,229 @@
+/* ===========================
+   Brokerage Section
+=========================== */
+
+.brokerage-section {
+  margin-top: 4.375rem; /* 70px */
+  margin-bottom: 4.375rem; /* 70px */
+
+  padding-left: 6.875rem; /* 110px */
+  padding-right: 6.875rem; /* 110px */
+}
+
+/* ===========================
+   Tabs
+=========================== */
+
+.brokerage-tabs {
+  display: flex;
+  align-items: center;
+  gap: 3.75rem; /* 60px */
+  border-bottom: 0.0625rem solid #dee2e6; /* 1px */
+  margin-bottom: 2.1875rem; /* 35px */
+}
+
+.brokerage-tabs button {
+  border: none;
+  background: none;
+
+  font-size: 1.5rem; /* 24px */
+  font-weight: 500;
+
+  color: #387ed1 !important;
+
+  padding-bottom: 1.125rem; /* 18px */
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.brokerage-tabs button:hover {
+  color: #424242;
+}
+
+.brokerage-tabs button.active {
+  color: #666666 !important;
+  border-bottom: 0.1875rem solid #387ed1; /* 3px */
+}
+
+/* ===========================
+   Table
+=========================== */
+
+.brokerage-table {
+  border: 0.0625rem solid #dee2e6;
+  border-radius: 0.25rem; /* 4px */
+  overflow: hidden;
+}
+
+.brokerage-table th {
+  background: #fff;
+
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+
+  color: #424242;
+
+  padding: 1.125rem; /* 18px */
+
+  vertical-align: middle;
+}
+
+.brokerage-table td {
+  padding: 1.375rem 1.375rem; /* 22px 22px */
+
+  font-size: 1rem; /* 16px */
+
+  color: #424242;
+
+  line-height: 1.8;
+
+  vertical-align: top;
+}
+
+.brokerage-table tr {
+  border-bottom: 0.0625rem solid #eeeeee;
+}
+
+.brokerage-table ul {
+  margin-bottom: 0;
+}
+
+.brokerage-table li {
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+/* First Column */
+
+.brokerage-table td:first-child,
+.brokerage-table th:first-child {
+  width: 10.625rem; /* 170px */
+
+  font-weight: 500;
+
+  color: #424242;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 62rem) {
+  /* 992px */
+
+  .brokerage-tabs {
+    gap: 1.5625rem; /* 25px */
+
+    overflow-x: auto;
+  }
+
+  .brokerage-tabs button {
+    font-size: 1.4rem;
+
+    white-space: nowrap;
+  }
+
+  .brokerage-table th,
+  .brokerage-table td {
+    font-size: 0.9375rem; /* 15px */
+
+    padding: 0.9375rem; /* 15px */
+  }
+}
+/* ====================================
+   Brokerage Calculator Link
+==================================== */
+
+.brokerage-calculator {
+  margin-top: 2rem;
+
+  margin-bottom: 5rem;
+
+  font-size: 1.3rem;
+
+  color: #666;
+}
+
+.brokerage-link {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #387ed1 !important;
+}
+
+.brokerage-link:hover {
+  color: #1f6cc0;
+}
+
+/* ====================================
+   Account Opening Table
+==================================== */
+
+.account-opening-section {
+  margin-top: 5rem;
+}
+
+.account-heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #424242;
+  margin-bottom: 2.2rem;
+}
+
+/* ===============================
+   Table
+=================================*/
+
+.account-table {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.account-table thead th {
+  background: #fff;
+  color: #424242;
+  font-size: 1.12rem;
+  font-weight: 500;
+  padding: 1.3rem 1.4rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.account-table tbody td {
+  color: #424242;
+  font-size: 1.05rem;
+  font-weight: 400;
+  padding: 1rem 1.4rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.account-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* First Column */
+
+.account-table th:first-child,
+.account-table td:first-child {
+  width: 63%;
+}
+
+/* Second Column */
+
+.account-table th:last-child,
+.account-table td:last-child {
+  width: 37%;
+}
+
+.free-badge {
+  background: #4caf50;
+  color: white !important;
+  padding: 4px 12px;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
