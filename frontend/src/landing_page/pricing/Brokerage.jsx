@@ -169,6 +169,61 @@ function Brokerage() {
             </tr>
           </tbody>
         </table>
+
+        <div className="DMC-other-info">
+          <p className="mt-3 description">
+            For a non-BSDA account, AMC is ₹300 per year + 18% GST, regardless
+            of holdings value, charged quarterly.
+          </p>
+          <p className="description">
+            To learn more about BSDA,{" "}
+            <a href="" className="amc-links">
+              click here
+            </a>
+            . To learn more about AMC,{" "}
+            <a href="" className="amc-links">
+              click here
+            </a>
+            .
+          </p>
+          <p className="description">*Resident individual accounts only.</p>
+        </div>
+      </section>
+
+      {/* Demat AMC */}
+
+      <section className="pricing-section">
+        <h2>Charges for optional value added services</h2>
+
+        <table className="pricing-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Billing Frequency</th>
+              <th>Charges</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Tickertape</td>
+              <td>Monthly / Quarterly / Annual</td>
+              <td>Free: 0 | Pro: 249/699/2399</td>
+            </tr>
+
+            <tr>
+              <td>Smallcase</td>
+              <td>Per transaction</td>
+              <td>Buy & Invest More: 100 | SIP: 10</td>
+            </tr>
+
+            <tr>
+              <td>Kite Connect</td>
+              <td>Monthly</td>
+              <td>Connect: 500 | Personal: Free</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </div>
   );
