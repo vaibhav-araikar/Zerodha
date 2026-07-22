@@ -287,7 +287,7 @@
 
   gap: 4rem;
 
-  margin-top: 2.5rem;
+  margin-top: 0rem !important;
 }
 
 .charges-column {
@@ -295,13 +295,11 @@
 
   flex-direction: column;
 
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .charge-card {
-  border-bottom: 1px solid #eeeeee;
-
-  padding-bottom: 1.8rem;
+  /* padding-bottom: 0.05rem; */
 }
 
 .charge-card:last-child {
@@ -309,7 +307,8 @@
 }
 
 .charge-card h4 {
-  font-size: 1.25rem;
+  font-weight: 400 !important;
+  font-size: 1rem;
 
   font-weight: 500;
 
@@ -317,17 +316,21 @@
 
   margin-bottom: 0.8rem;
 
-  line-height: 1.5;
+  line-height: 1;
 }
 
 .charge-card p {
-  font-size: 0.95rem;
+  font-size: 0.75rem;
 
   color: #666666;
 
-  line-height: 1.9;
+  line-height: 1.7;
 
   margin: 0;
+}
+
+.charge-card ul li {
+  font-size: 0.75rem;
 }
 
 /* ======================================================

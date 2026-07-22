@@ -260,7 +260,7 @@ function Brokerage() {
       {/* ================= Charges Explained ================= */}
 
       <section className="pricing-section">
-        <h2>Charges explained</h2>
+        <h2 className="fs-4">Charges explained</h2>
 
         <div className="charges-grid">
           <div className="charges-column">
@@ -390,18 +390,35 @@ function Brokerage() {
 
           <div className="charges-column">
             <div className="charge-card">
-              <h4>SEBI Charges</h4>
+              <h4>GST</h4>
               <p>
-                Regulatory fee charged by SEBI on every trade executed on Indian
-                exchanges.
+                Tax levied by the government on the services rendered. 18% of (
+                brokerage + SEBI charges + transaction charges)
               </p>
             </div>
 
             <div className="charge-card">
-              <h4>Stamp Duty</h4>
+              <h4>SEBI Charges</h4>
               <p>
-                State government tax applicable only on the buy side of equity,
-                derivatives and commodity transactions.
+                Charged at ₹10 per crore + GST by Securities and Exchange Board
+                of India for regulating the markets.
+              </p>
+            </div>
+
+            <div className="charge-card">
+              <h4>DP (Depository Participant) Charges</h4>
+              <p>
+                ₹15.34 per scrip (₹3.5 CDSL fee + ₹9.5 Zerodha fee + ₹2.34 GST)
+                is charged on the trading account ledger when stocks are sold,
+                irrespective of quantity.
+              </p>
+              <p>
+                Female demat account holders (as first holder) will enjoy a
+                discount of ₹0.25 per transaction on the CDSL fee.
+              </p>
+              <p>
+                Debit transactions of mutual funds & bonds get an additional
+                discount of ₹0.25 on the CDSL fee.
               </p>
             </div>
 
@@ -411,6 +428,72 @@ function Brokerage() {
                 Charged whenever shares are sold from your Demat account.
                 Applicable once per ISIN per day.
               </p>
+            </div>
+
+            <div className="charge-card">
+              <h4>Pledging charges</h4>
+              <p>₹30 + GST per pledge request per ISIN.</p>
+            </div>
+
+            <div className="charge-card">
+              <h4>AMC (Account maintenance charges)</h4>
+              <p>
+                Free for the first year on all new resident individual accounts.
+              </p>
+              <p>
+                For BSDA demat account: Zero charges if the holding value is
+                less than ₹4,00,000. To learn more about BSDA, Click here
+              </p>
+              <p>
+                For non-BSDA demat accounts: ₹300/year + 18% GST charged
+                quarterly (90 days). To learn more about AMC, Click here
+              </p>
+            </div>
+
+            <div className="charge-card">
+              <h4>Corporate action order charges</h4>
+              <p>
+                ₹20 plus GST will be charged for OFS / buyback / takeover /
+                delisting orders placed through Console.
+              </p>
+            </div>
+
+            <div className="charge-card">
+              <h4>Off-market transfer charges</h4>
+              <p>₹25 per transaction.</p>
+            </div>
+
+            <div className="charge-card">
+              <h4>Physical CMR request</h4>
+              <p>
+                First CMR request is free. ₹20 + ₹100 (courier charge) + 18% GST
+                for subsequent requests.
+              </p>
+            </div>
+
+            <div className="charge-card">
+              <h4>Payment gateway charges</h4>
+              <p>₹9 + GST (Not levied on transfers done via UPI)</p>
+            </div>
+
+            <div className="charge-card">
+              <h4>Delayed Payment Charges</h4>
+              <p>
+                Interest is levied at 18% a year or 0.05% per day on the debit
+                balance in your trading account. Learn more.
+              </p>
+            </div>
+
+            <div className="charge-card">
+              <h4>Trading using 3-in-1 account with block functionality</h4>
+              <ul>
+                <li>
+                  <b>Delivery & MTF Brokerage</b>: 0.5% per executed order.
+                </li>
+                <li>
+                  <b>Intraday Brokerage</b>: 0.05% per executed order.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
