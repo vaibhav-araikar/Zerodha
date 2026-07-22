@@ -1,35 +1,45 @@
-/* ===========================================
-   Brokerage Section
-=========================================== */
+/* ======================================================
+   PRICING PAGE
+====================================================== */
 
 .brokerage-section {
-  margin: 4.5rem auto;
-  padding-inline: 6.5rem;
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1rem;
 }
 
-/* ===========================================
-   Tabs
-=========================================== */
+/* ======================================================
+   TABS
+====================================================== */
 
 .brokerage-tabs {
   display: flex;
-  gap: 3.8rem;
+
+  gap: 3.5rem;
+
   border-bottom: 1px solid #e6e6e6;
+
   margin-bottom: 2.5rem;
 }
 
 .brokerage-tabs button {
-  background: transparent;
   border: none;
-  padding: 0 0 1rem;
+
+  background: none;
+
+  outline: none;
+
   cursor: pointer;
 
-  font-size: 2rem;
+  padding: 0 0 1rem;
+
+  font-size: 1.85rem;
+
   font-weight: 400;
 
   color: #387ed1;
 
-  transition: 0.25s;
+  transition: 0.3s;
 }
 
 .brokerage-tabs button:hover {
@@ -37,233 +47,418 @@
 }
 
 .brokerage-tabs button.active {
-  color: #666666;
+  color: #424242;
+
   border-bottom: 3px solid #387ed1;
 }
 
-/* ===========================================
-   Brokerage Table
-=========================================== */
+/* ======================================================
+   BROKERAGE TABLE
+====================================================== */
 
 .brokerage-table {
   width: 100%;
+
   border: 1px solid #e6e6e6;
-  border-collapse: separate;
-  border-spacing: 0;
+
+  border-collapse: collapse;
+
+  background: #fff;
 }
 
 .brokerage-table thead th {
-  padding: 1.4rem;
-  font-size: 1.15rem;
+  padding: 1rem 1.25rem;
+
+  text-align: left;
+
+  font-size: 0.95rem;
+
   font-weight: 500;
+
   color: #424242;
+
   border-bottom: 1px solid #e6e6e6;
 }
 
 .brokerage-table tbody td {
-  padding: 1.8rem 1.4rem;
-  font-size: 1rem;
-  color: #424242;
+  padding: 1.2rem 1.25rem;
+
+  font-size: 0.95rem;
+
+  color: #555;
+
   line-height: 1.8;
+
   vertical-align: top;
-  border: none;
 }
 
-.brokerage-table td:first-child,
-.brokerage-table th:first-child {
-  width: 170px;
+.brokerage-table td:first-child {
+  width: 180px;
+
   font-weight: 500;
 }
 
 .brokerage-table ul {
-  padding-left: 1rem;
   margin: 0;
+
+  padding-left: 1.2rem;
 }
 
 .brokerage-table li {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
-/* ===========================================
-   Brokerage Calculator
-=========================================== */
+/* ======================================================
+   CALCULATOR
+====================================================== */
 
 .brokerage-calculator {
   text-align: center;
-  margin: 3rem 0 5rem;
 
-  font-size: 1.2rem;
-  color: #424242;
+  margin: 2.5rem 0 5rem;
+
+  color: #666;
+
+  font-size: 1rem;
 }
 
 .brokerage-link {
-  color: #387ed1;
   text-decoration: none;
+
+  color: #387ed1;
 }
 
 .brokerage-link:hover {
-  color: #1f6cc0;
+  color: #285fa7;
 }
 
-/* ===========================================
-   Common Pricing Section
-=========================================== */
+/* ======================================================
+   COMMON SECTIONS
+====================================================== */
 
 .pricing-section {
-  margin-top: 5rem;
+  margin-top: 5.5rem;
 }
 
 .pricing-section h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+
   font-weight: 500;
+
   color: #424242;
+
   margin-bottom: 2rem;
 }
 
-/* ===========================================
-   Common Table
-=========================================== */
+/* ======================================================
+   COMMON TABLE
+====================================================== */
 
 .pricing-table {
   width: 100%;
+
   border: 1px solid #e6e6e6;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 4px;
-  overflow: hidden;
+
+  border-collapse: collapse;
+
+  background: #fff;
 }
 
 .pricing-table thead th {
-  padding: 1.25rem 1.3rem;
+  padding: 1rem 1.25rem;
 
-  font-size: 1rem;
+  text-align: left;
+
+  font-size: 0.95rem;
 
   font-weight: 500;
 
   color: #424242;
 
   border-bottom: 1px solid #e6e6e6;
-
-  background: white;
-
-  text-align: left;
 }
 
 .pricing-table tbody td {
-  padding: 0.8rem 1.3rem;
+  padding: 1rem 1.25rem;
 
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 
-  color: #424242;
+  color: #555;
 
-  border: none;
-
-  vertical-align: middle;
+  line-height: 1.8;
 }
 
-.pricing-table th:first-child,
 .pricing-table td:first-child {
   width: 55%;
 }
 
-.pricing-table th:last-child,
 .pricing-table td:last-child {
   width: 45%;
 }
 
-/* ===========================================
-   FREE Badge
-=========================================== */
+/* ======================================================
+   FREE BADGE
+====================================================== */
 
 .free-badge {
   display: inline-block;
 
   background: #4caf50;
 
-  color: white;
+  color: #fff;
 
-  font-size: 0.78rem;
+  font-size: 0.75rem;
 
   font-weight: 600;
 
-  padding: 0.28rem 0.75rem;
+  padding: 0.25rem 0.7rem;
 
   border-radius: 3px;
-
-  letter-spacing: 0.5px;
 }
 
-/* ===========================================
-   Info Box
-=========================================== */
+/* ======================================================
+   INFO BOX
+====================================================== */
 
 .info-box {
   display: inline-block;
 
-  background: #f7f7f7;
+  padding: 0.6rem 1rem;
+
+  background: #f8f8f8;
 
   border-left: 4px solid #387ed1;
 
-  padding: 0.5rem 1rem;
-
-  margin-bottom: 2rem;
-
-  color: #424242;
-
-  font-size: 1rem;
-}
-
-.section-text {
   margin-bottom: 1.5rem;
 
   color: #424242;
-
-  font-size: 1rem;
 }
 
-/* ===========================================
-   DMC other info section
-=========================================== */
+.section-text {
+  color: #666;
+
+  margin-bottom: 1.5rem;
+}
+
 .description {
-  font-weight: 400;
-  font-size: 0.85rem;
+  color: #666;
+
+  font-size: 0.95rem;
+
+  line-height: 1.9;
 }
 
 .amc-links {
-  color: #387ed1 !important;
+  color: #387ed1;
+
+  text-decoration: none;
 }
 
-/* ===========================================
-   Responsive
-=========================================== */
+.amc-links:hover {
+  color: #285fa7;
+}
+
+/* ======================================================
+   OPTIONAL TABLE
+====================================================== */
+
+.optional-table th:nth-child(1),
+.optional-table td:nth-child(1) {
+  width: 22%;
+}
+
+.optional-table th:nth-child(2),
+.optional-table td:nth-child(2) {
+  width: 33%;
+}
+
+.optional-table th:nth-child(3),
+.optional-table td:nth-child(3) {
+  width: 45%;
+}
+/* ======================================================
+   CHARGES EXPLAINED
+====================================================== */
+
+.charges-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 4rem;
+
+  margin-top: 2.5rem;
+}
+
+.charges-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.charge-card {
+  border-bottom: 1px solid #eeeeee;
+
+  padding-bottom: 1.8rem;
+}
+
+.charge-card:last-child {
+  border-bottom: none;
+}
+
+.charge-card h4 {
+  font-size: 1.25rem;
+
+  font-weight: 500;
+
+  color: #424242;
+
+  margin-bottom: 0.8rem;
+
+  line-height: 1.5;
+}
+
+.charge-card p {
+  font-size: 0.95rem;
+
+  color: #666666;
+
+  line-height: 1.9;
+
+  margin: 0;
+}
+
+/* ======================================================
+   TABLE HOVER
+====================================================== */
+
+.brokerage-table tbody tr:hover,
+.pricing-table tbody tr:hover {
+  background: #fafafa;
+
+  transition: 0.25s;
+}
+
+/* ======================================================
+   LINKS
+====================================================== */
+
+a {
+  transition: 0.25s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ======================================================
+   SCROLLBAR (Optional)
+====================================================== */
+
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #d5d5d5;
+
+  border-radius: 20px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f7f7f7;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
 
 @media (max-width: 992px) {
   .brokerage-section {
-    padding-inline: 1rem;
+    padding: 0 1rem;
   }
 
   .brokerage-tabs {
     gap: 2rem;
 
     overflow-x: auto;
+
+    white-space: nowrap;
   }
 
   .brokerage-tabs button {
-    font-size: 1.5rem;
-
-    white-space: nowrap;
+    font-size: 1.4rem;
   }
 
   .brokerage-table th,
   .brokerage-table td,
   .pricing-table th,
   .pricing-table td {
-    padding: 1rem;
+    padding: 0.9rem;
 
     font-size: 0.9rem;
   }
 
+  .pricing-section {
+    margin-top: 4rem;
+  }
+
   .pricing-section h2 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+  }
+
+  .charges-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brokerage-section {
+    margin: 3rem auto;
+  }
+
+  .brokerage-tabs {
+    gap: 1.5rem;
+  }
+
+  .brokerage-tabs button {
+    font-size: 1.15rem;
+  }
+
+  .brokerage-calculator {
+    font-size: 0.95rem;
+
+    margin: 2rem 0 3rem;
+  }
+
+  .pricing-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .charge-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .charge-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .brokerage-table,
+  .pricing-table {
+    min-width: 650px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .free-badge {
+    font-size: 0.7rem;
   }
 }
