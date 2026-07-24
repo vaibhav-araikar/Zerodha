@@ -1,5 +1,7 @@
+import Hero from "./Hero";
+
 function SupportPage() {
-  return <h1>Support Page</h1>;
+  return <Hero />;
 }
 
 export default SupportPage;

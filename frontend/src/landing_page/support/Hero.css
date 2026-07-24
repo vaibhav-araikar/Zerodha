@@ -1,0 +1,141 @@
+/* ===========================
+   Support Hero
+=========================== */
+
+.support-hero {
+  background: #387ed1;
+  padding: 60px 0;
+  color: white;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.support-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 60px;
+}
+
+/* ===========================
+   Left
+=========================== */
+
+.support-left {
+  flex: 1;
+}
+
+.support-text {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 22px;
+
+  font-weight: 500;
+}
+
+.support-text:hover {
+  color: white;
+}
+
+.support-heading {
+  font-size: 34px;
+
+  font-weight: 500;
+
+  margin: 30px 0;
+
+  line-height: 1.4;
+}
+
+/* ===========================
+   Right
+=========================== */
+
+.support-right {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: flex-start;
+}
+
+.my-ticket {
+  background: transparent;
+
+  border: 1px solid white;
+
+  color: white;
+
+  padding: 10px 22px;
+
+  font-size: 16px;
+
+  border-radius: 4px;
+
+  transition: 0.3s;
+}
+
+.my-ticket:hover {
+  background: white;
+
+  color: #387ed1;
+}
+
+/* ===========================
+   Search
+=========================== */
+
+.search-box {
+  max-width: 700px;
+}
+
+.search-icon {
+  background: white;
+
+  border: none;
+
+  color: #777;
+
+  padding-left: 20px;
+}
+
+.form-control {
+  height: 64px;
+
+  border: none;
+
+  box-shadow: none !important;
+
+  font-size: 17px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+  .support-header {
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .support-heading {
+    font-size: 28px;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+}
