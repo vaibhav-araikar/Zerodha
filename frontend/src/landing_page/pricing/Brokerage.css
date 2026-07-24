@@ -119,17 +119,17 @@
 
   color: #666;
 
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .brokerage-link {
   text-decoration: none;
-
-  color: #387ed1;
+  color: #387ed1 !important;
+  font-size: 1.3rem;
 }
 
 .brokerage-link:hover {
-  color: #285fa7;
+  color: #424242 !important;
 }
 
 /* ======================================================
@@ -249,7 +249,7 @@
 }
 
 .amc-links {
-  color: #387ed1;
+  color: #387ed1 !important;
 
   text-decoration: none;
 }
