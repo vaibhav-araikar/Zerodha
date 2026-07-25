@@ -3,9 +3,8 @@
 =========================== */
 
 .support-hero {
-  background: #387ed1;
-  padding: 60px 0;
-  color: white;
+  background: #f0f0ef;
+  padding: 40px 0;
 }
 
 /* ===========================
@@ -14,78 +13,48 @@
 
 .support-header {
   display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-start;
-
-  gap: 60px;
+  flex-direction: column;
+  gap: 25px;
 }
 
 /* ===========================
-   Left
+   Top Row
 =========================== */
 
-.support-left {
-  flex: 1;
+.support-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 3rem;
 }
 
 .support-text {
-  color: white;
-
+  color: #397dd0;
   text-decoration: none;
-
-  font-size: 22px;
-
-  font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .support-text:hover {
-  color: white;
-}
-
-.support-heading {
-  font-size: 34px;
-
-  font-weight: 500;
-
-  margin: 30px 0;
-
-  line-height: 1.4;
+  color: #387ed1;
 }
 
 /* ===========================
-   Right
+   Button
 =========================== */
 
-.support-right {
-  display: flex;
-
-  justify-content: flex-end;
-
-  align-items: flex-start;
-}
-
 .my-ticket {
-  background: transparent;
-
-  border: 1px solid white;
-
-  color: white;
-
   padding: 10px 22px;
-
+  color: white !important;
   font-size: 16px;
-
+  font-weight: 500;
   border-radius: 4px;
-
   transition: 0.3s;
 }
 
 .my-ticket:hover {
-  background: white;
-
-  color: #387ed1;
+  background: #424242 !important;
+  color: white !important;
 }
 
 /* ===========================
@@ -93,26 +62,21 @@
 =========================== */
 
 .search-box {
-  max-width: 700px;
+  width: 100%;
+  margin-left: 3rem;
 }
 
 .search-icon {
   background: white;
-
   border: none;
-
   color: #777;
-
   padding-left: 20px;
 }
 
 .form-control {
   height: 64px;
-
   border: none;
-
   box-shadow: none !important;
-
   font-size: 17px;
 }
 
@@ -125,17 +89,13 @@
 =========================== */
 
 @media (max-width: 992px) {
-  .support-header {
+  .support-top {
     flex-direction: column;
-
-    gap: 30px;
-  }
-
-  .support-heading {
-    font-size: 28px;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   .search-box {
-    max-width: 100%;
+    width: 100%;
   }
 }

@@ -6,35 +6,28 @@ function HeroSupport() {
     <section className="support-hero">
       <div className="container">
         <div className="support-header">
-          {/* Left Side */}
-          <div className="support-left">
+          {/* First Row */}
+          <div className="support-top">
             <a href="/support" className="support-text">
               Support Portal
             </a>
 
-            <h2 className="support-heading">
-              Search for an answer or browse help topics to create a ticket
-            </h2>
-
-            <div className="input-group search-box">
-              <span className="input-group-text search-icon">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </span>
-
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Eg: How do I open my account, How do I activate F&O..."
-              />
-            </div>
-          </div>
-
-          {/* Right Side */}
-
-          <div className="support-right">
-            <button type="button" className="btn my-ticket">
+            <button type="button" className="btn btn-primary my-ticket">
               My Tickets
             </button>
+          </div>
+
+          {/* Second Row */}
+          <div className="input-group search-box border">
+            <span className="input-group-text search-icon">
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </span>
+
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Eg: How do I open my account, How do I activate F&O..."
+            />
           </div>
         </div>
       </div>
