@@ -6,7 +6,7 @@ export default function CreateTicket() {
       <div className="row">
         {/* left section */}
         <div className="col-8"></div>
-        <div class="input-group flex-nowrap mt-5 pt-1 border">
+        <div class="input-group flex-nowrap mt-5 pt-1">
           <span class="input-group-text border" id="addon-wrapping">
             <i class="fa-solid fa-circle-plus"></i>
           </span>
