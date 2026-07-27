@@ -71,7 +71,7 @@ function AccordionItem({ section, isOpen, onToggle, isFirst }) {
   const Icon = section.icon;
 
   return (
-    <div className={`ticket-card ${isFirst ? "" : "mt-4"}`}>
+    <div className={`ticket-card ${isFirst ? "" : "mt-4 "}`}>
       <div
         className="ticket-header"
         role="button"
@@ -87,7 +87,7 @@ function AccordionItem({ section, isOpen, onToggle, isFirst }) {
       >
         <div className="ticket-left">
           <div className="icon-box">
-            <Icon size={20} strokeWidth={1.8} />
+            <Icon size={20} strokeWidth={1.8} color="#387ed1" />
           </div>
 
           <h4>{section.title}</h4>

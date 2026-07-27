@@ -14,6 +14,7 @@
 .ticket-card {
   background: #fff;
   border: 1px solid #e9ecef;
+  margin-left: 3.5rem;
 }
 
 .ticket-header {
@@ -28,6 +29,7 @@
 .ticket-left {
   display: flex;
   align-items: center;
+  /* margin-left: 10rem !important; */
 }
 
 .icon-box {
@@ -40,7 +42,7 @@
   background: #fafafa;
   border-right: 1px solid #e9ecef;
 
-  color: #387ed1;
+  color: #387ed1 !important;
 }
 
 .ticket-left h4 {
@@ -94,6 +96,7 @@
 
 .ticket-body li {
   margin-bottom: 16px;
+  color: #387ed1 !important;
 }
 
 .ticket-body li:last-child {
@@ -101,15 +104,19 @@
 }
 
 .ticket-body a {
-  color: #387ed1;
+  color: #387ed1 !important;
   text-decoration: none;
   font-size: 1rem;
 }
 
 .ticket-body a:hover {
   text-decoration: underline;
+  color: #424242 !important;
 }
 
+.ticket-body li:hover {
+  color: #424242 !important;
+}
 /* ===================================
    Right Section
 =================================== */
@@ -118,7 +125,7 @@
   background: #fdf3e7;
   padding: 25px;
   border: 1px solid #e9ecef;
-  border-left: 4px solid #f0932b;
+  border-left: 8px solid #f0932b;
 }
 
 .notice-box ul {
@@ -128,6 +135,7 @@
 
 .notice-box li {
   margin-bottom: 18px;
+  color: #387ed1 !important;
 }
 
 .notice-box li:last-child {
@@ -139,10 +147,12 @@
   text-decoration: none;
   font-size: 0.98rem;
   line-height: 1.6;
+  color: #387ed1 !important;
 }
 
 .notice-box a:hover {
   text-decoration: underline;
+  color: #424242 !important;
 }
 
 /* ===================================
@@ -175,12 +185,11 @@
   counter-increment: quick-links;
   padding: 14px 20px;
   border-bottom: 1px solid #ececec;
-  color: #424242;
 }
 
 .quick-links-box li::before {
   content: counter(quick-links) ". ";
-  color: #424242;
+  color: #387ed1 !important;
 }
 
 .quick-links-box li:last-child {
@@ -188,15 +197,18 @@
 }
 
 .quick-links-box a {
-  color: #387ed1;
+  color: #387ed1 !important;
   text-decoration: none;
   font-size: 0.98rem;
 }
 
 .quick-links-box a:hover {
-  text-decoration: underline;
+  color: #424242 !important;
 }
 
+.quick-links-box li:hover::before {
+  color: #424242 !important;
+}
 /* ===================================
    Responsive
 =================================== */
