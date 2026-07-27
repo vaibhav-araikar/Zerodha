@@ -1,0 +1,229 @@
+/* ===================================
+   Main Container
+=================================== */
+
+.create-ticket-container {
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
+
+/* ===================================
+   Left Section
+=================================== */
+
+.ticket-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ticket-left {
+  display: flex;
+  align-items: center;
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #fafafa;
+  border-right: 1px solid #e9ecef;
+
+  color: #387ed1;
+}
+
+.ticket-left h4 {
+  margin: 0;
+  margin-left: 22px;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #424242;
+}
+
+.arrow {
+  margin-right: 24px;
+  color: #387ed1;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.arrow:hover {
+  color: #285dab;
+}
+
+/* Rotate the chevron to point upward when its section is open */
+.arrow-open {
+  transform: rotate(180deg);
+}
+
+/* ===================================
+   Open Card Body (animated)
+=================================== */
+
+/* Wrapper handles the smooth height animation; the inner
+   .ticket-body keeps its own padding untouched so the
+   collapsed height measurement stays clean. */
+.ticket-body-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+.ticket-body {
+  border-top: 1px solid #ececec;
+  padding: 28px 40px;
+}
+
+.ticket-body ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.ticket-body li {
+  margin-bottom: 16px;
+}
+
+.ticket-body li:last-child {
+  margin-bottom: 0;
+}
+
+.ticket-body a {
+  color: #387ed1;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.ticket-body a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================
+   Right Section
+=================================== */
+
+.notice-box {
+  background: #fdf3e7;
+  padding: 25px;
+  border: 1px solid #e9ecef;
+  border-left: 4px solid #f0932b;
+}
+
+.notice-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.notice-box li {
+  margin-bottom: 18px;
+}
+
+.notice-box li:last-child {
+  margin-bottom: 0;
+}
+
+.notice-box a {
+  color: #387ed1;
+  text-decoration: none;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.notice-box a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================
+   Quick Links
+=================================== */
+
+.quick-links-box {
+  margin-top: 35px;
+  border: 1px solid #e9ecef;
+}
+
+.quick-links-box h4 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #424242;
+  margin: 0;
+  padding: 16px 20px;
+  background: #f5f6f7;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.quick-links-box ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: quick-links;
+}
+
+.quick-links-box li {
+  counter-increment: quick-links;
+  padding: 14px 20px;
+  border-bottom: 1px solid #ececec;
+  color: #424242;
+}
+
+.quick-links-box li::before {
+  content: counter(quick-links) ". ";
+  color: #424242;
+}
+
+.quick-links-box li:last-child {
+  border-bottom: none;
+}
+
+.quick-links-box a {
+  color: #387ed1;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.quick-links-box a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media (max-width: 991px) {
+  .quick-links-box {
+    margin-top: 40px;
+  }
+
+  .notice-box {
+    margin-top: 40px;
+  }
+
+  .ticket-left h4 {
+    font-size: 1.05rem;
+  }
+
+  .ticket-body {
+    padding: 24px;
+  }
+
+  .icon-box {
+    width: 52px;
+    height: 52px;
+  }
+
+  .ticket-header {
+    height: 52px;
+  }
+}
