@@ -9,13 +9,16 @@ const Menu = () => {
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
   };
+  // basically hum dashboard pr click karenge to 0 pass karenge and orders pr click karenge to 1 pass karenge and so on...
 
   const handleProfileClick = (index) => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
+  // currently true hai to false hoga or false hai to true ho jayega
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
+  // jo bhi menu currently active hai vo dikh jayega and orange color me highlight ho jayega
 
   return (
     <div className="menu-container">
