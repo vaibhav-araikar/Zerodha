@@ -65,6 +65,7 @@ const Menu = () => {
               onClick={() => handleMenuClick(3)}
             >
               <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
+                {/* //currently agar is item ko select kiya hai to active class de diye warna menu class de dijiye */}
                 Positions
               </p>
             </Link>

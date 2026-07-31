@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios, { all } from "axios";
+import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph";
 
-// import { holdings } from "../data/data";
+import { holdings } from "../data/data";
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:3002/allHoldings").then((res) => {
-      // console.log(res.data);
+      console.log(res.data);
       setAllHoldings(res.data);
     });
   }, []);
@@ -71,7 +71,8 @@ const Holdings = () => {
               <tr key={index}>
                 <td>{stock.name}</td>
                 <td>{stock.qty}</td>
-                <td>{stock.avg.toFixed(2)}</td>
+                <td>{stock.avg.toFixed(2)}</td>{" "}
+                {/* this will go upto 2 decimal places */}
                 <td>{stock.price.toFixed(2)}</td>
                 <td>{curValue.toFixed(2)}</td>
                 <td className={profClass}>
