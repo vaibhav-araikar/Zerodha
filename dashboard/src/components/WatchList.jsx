@@ -151,6 +151,7 @@ const WatchListActions = ({ uid }) => {
           TransitionComponent={Grow}
           onClick={handleBuyClick}
         >
+          {/* added extra attributes inside the Tooltip */}
           <button className="buy">Buy</button>
         </Tooltip>
         <Tooltip
