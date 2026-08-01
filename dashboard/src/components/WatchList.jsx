@@ -5,6 +5,7 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 
 import { Tooltip, Grow } from "@mui/material";
+// tooltip se hover krne par icons aayenge
 
 import {
   BarChartOutlined,
@@ -102,6 +103,7 @@ export default WatchList;
 const WatchListItem = ({ stock }) => {
   const [showWatchlistActions, setShowWatchlistActions] = useState(false);
 
+  // mouse hover effect
   const handleMouseEnter = (e) => {
     setShowWatchlistActions(true);
   };
@@ -111,11 +113,14 @@ const WatchListItem = ({ stock }) => {
   };
 
   return (
+    // li me is liye likh rhe hai kyuki uppar hum watchlist component ko ul me define kiye hai
     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="item">
         <p className={stock.isDown ? "down" : "up"}>{stock.name}</p>
+        {/* down hai to red and up hai to green */}
         <div className="itemInfo">
           <span className="percent">{stock.percent}</span>
+          {/* agar stock price down hai to down arrow dikha and up hai to up arrow. And these icons comes from material ui */}
           {stock.isDown ? (
             <KeyboardArrowDown className="down" />
           ) : (
