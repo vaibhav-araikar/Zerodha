@@ -129,6 +129,7 @@ const WatchListItem = ({ stock }) => {
           <span className="price">{stock.price}</span>
         </div>
       </div>
+      {/* jab showWatchlistActions condition true ho to watchlist actions dikha do */}
       {showWatchlistActions && <WatchListActions uid={stock.name} />}
     </li>
   );
