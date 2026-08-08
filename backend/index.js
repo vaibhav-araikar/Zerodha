@@ -8,12 +8,12 @@ const MONGO_URL = process.env.MONGO_URL;
 
 const HoldingModel = require("./model/HoldingModel");
 
-// Middleware
+// MIDDLEWARE
 app.use(express.json());
 
-// Adding dummy data in database
+// ADD HOLDINGS
 app.get("/addholdings", async (req, res) => {
-  let tempHoldings = [
+  const tempHoldings = [
     {
       name: "BHARTIARTL",
       qty: 2,
@@ -125,8 +125,10 @@ app.get("/addholdings", async (req, res) => {
     },
   ];
 
-  tempHoldings.forEach((item) => {
-    let newHolding = new HoldingModel({
+  const savedHoldings = [];
+
+  for (const item of tempHoldings) {
+    const newHolding = new HoldingModel({
       name: item.name,
       qty: item.qty,
       avg: item.avg,
@@ -136,22 +138,38 @@ app.get("/addholdings", async (req, res) => {
       isLoss: item.isLoss,
     });
 
-    newHolding.save();
-  });
+    const savedHolding = await newHolding.save();
+    console.log(`${savedHolding.name} saved`);
+    savedHoldings.push(savedHolding);
+  }
 
-  res.send("Holdings added to database");
+  console.log("Total holdings saved:", savedHoldings.length);
+
+  res.send(`${savedHoldings.length} holdings added to database`);
 });
 
-// Connect to MongoDB
+// GET ALL HOLDINGS
+app.get("/allHoldings", async (req, res) => {
+  const holdings = await HoldingModel.find({});
+
+  console.log("Total holdings:", holdings.length);
+
+  res.json(holdings);
+});
+
+// CONNECT TO MONGODB
 mongoose
   .connect(MONGO_URL)
   .then(() => {
     console.log("Connected to MongoDB");
+    console.log("Database:", mongoose.connection.name);
+    console.log("Host:", mongoose.connection.host);
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
   });
 
+// START SERVER
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log("App started");
