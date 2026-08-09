@@ -147,6 +147,9 @@ app.get("/addholdings", async (req, res) => {
 
   res.send(`${savedHoldings.length} holdings added to database`);
 });
+//
+// Dont go to /addholdings route again, it will add duplicate data to the database.
+//
 
 // GET ALL HOLDINGS
 app.get("/allHoldings", async (req, res) => {
