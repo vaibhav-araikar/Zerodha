@@ -1,9 +1,6 @@
 const { model } = require("mongoose");
-const Position = require("../schemas/HoldingSchema");
+const Position = require("../schemas/PositionSchema");
 
-const PositionModel = model("Position", PositionSchema);
+const PositionModel = model("Position", Position);
 
 module.exports = PositionModel;
-
-// Vaibhav Araikar
-// G H Raisoni College of Engineering, Nagpur
