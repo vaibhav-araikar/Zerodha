@@ -1,7 +1,10 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-require("dotenv").config();
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL;
@@ -11,6 +14,8 @@ const PositionModel = require("./model/PositionModel");
 
 // MIDDLEWARE
 app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
 
 //
 // HOLDINGS DATA
@@ -156,13 +161,13 @@ app.use(express.json());
 //
 
 // GET ALL HOLDINGS
-// app.get("/allHoldings", async (req, res) => {
-//   const allHoldings = await HoldingModel.find({});
+app.get("/allHoldings", async (req, res) => {
+  const allHoldings = await HoldingModel.find({});
 
-//   console.log("Total holdings:", allHoldings.length);
+  console.log("Total holdings:", allHoldings.length);
 
-//   res.json(allHoldings);
-// });
+  res.json(allHoldings);
+});
 
 //
 // POSITIONS DATA

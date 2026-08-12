@@ -8,10 +8,15 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
-      console.log(res.data);
-      setAllHoldings(res.data);
-    });
+    axios
+      .get("http://localhost:3000/allholdings")
+      .then((res) => {
+        console.log(res.data);
+        setAllHoldings(res.data);
+      })
+      .catch((err) => {
+        console.log("Error fetching holdings:", err);
+      });
   }, []);
 
   // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
