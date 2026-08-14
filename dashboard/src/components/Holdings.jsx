@@ -33,7 +33,6 @@ const Holdings = () => {
     ],
   };
 
-  // demo data for graph
   // export const data = {
   //   labels,
   //   datasets: [
