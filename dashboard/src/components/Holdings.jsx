@@ -33,6 +33,7 @@ const Holdings = () => {
     ],
   };
 
+  // demo data
   // export const data = {
   //   labels,
   //   datasets: [
