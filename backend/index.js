@@ -11,6 +11,7 @@ const MONGO_URL = process.env.MONGO_URL;
 
 const HoldingModel = require("./model/HoldingModel");
 const PositionModel = require("./model/PositionModel");
+const OrderModel = require("./model/OrderModel");
 
 // MIDDLEWARE
 app.use(express.json());
@@ -221,15 +222,24 @@ app.get("/allHoldings", async (req, res) => {
 // });
 
 // GET ALL POSITIONS
-// app.get("/allPositions", async (req, res) => {
-//   const positions = await PositionModel.find({});
-
-//   console.log("Total positions:", positions.length);
-
-//   res.json(positions);
-// });
-
+app.get("/allPositions", async (req, res) => {
+  const positions = await PositionModel.find({});
+  console.log("Total positions:", positions.length);
+  res.json(positions);
+});
 // Dont go to /addpositions route again, it will add duplicate data to the database.
+
+//
+app.post("/newOrder", async (req, res) => {
+  let newOrder = new OrderModel({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+  });
+  newOrder.save();
+  res.send("Order placed successfully");
+});
 
 // CONNECT TO MONGODB
 mongoose
