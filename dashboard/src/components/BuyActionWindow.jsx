@@ -1,3 +1,4 @@
+// this component is used to display the buy action window when a user wants to buy a stock. It allows the user to input the quantity and price of the stock they want to buy, and then submit the order or cancel the action.
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
