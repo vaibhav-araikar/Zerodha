@@ -19,9 +19,12 @@ const Holdings = () => {
       });
   }, []);
 
-  // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  // labels are derived from the allHoldings state, specifically the name of each stock. The map function is used to iterate over the allHoldings array and extract the name property from each stock object.
+  // we are extracting the titles of the stocks from the allHoldings state and storing them in the labels array. This array will be used as the x-axis labels for the bar chart.
+  // name naam ka subarray create hoga jo ki allHoldings ke andar ke har ek stock ka name hoga. Ye labels array ko chart ke x-axis ke liye use kiya jayega.
   const labels = allHoldings.map((subArray) => subArray["name"]);
 
+  // this data object is used to configure the chart, including the labels and datasets. The datasets array contains an object that defines the label, data, and background color for the bar chart. The data for the chart is derived from the allHoldings state, specifically the price of each stock.
   const data = {
     labels,
     datasets: [
@@ -32,23 +35,6 @@ const Holdings = () => {
       },
     ],
   };
-
-  // demo data
-  // export const data = {
-  //   labels,
-  //   datasets: [
-  // {
-  //   label: 'Dataset 1',
-  //   data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-  //   backgroundColor: 'rgba(255, 99, 132, 0.5)',
-  // },
-  //     {
-  //       label: 'Dataset 2',
-  //       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-  //       backgroundColor: 'rgba(53, 162, 235, 0.5)',
-  //     },
-  //   ],
-  // };
 
   return (
     <>
@@ -110,6 +96,8 @@ const Holdings = () => {
           <p>P&L</p>
         </div>
       </div>
+
+      {/* Vertical Bar Graph */}
       <VerticalGraph data={data} />
     </>
   );
