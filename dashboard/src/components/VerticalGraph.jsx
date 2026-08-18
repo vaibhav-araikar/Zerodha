@@ -32,6 +32,7 @@ export const options = {
   },
 };
 
+// we are passing our data as a prop to the VerticalGraph component, which is then passed to the Bar component from react-chartjs-2. The Bar component will render a bar chart using the provided data and options.
 export function VerticalGraph({ data }) {
   return <Bar options={options} data={data} />;
 }
