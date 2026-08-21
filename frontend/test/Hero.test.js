@@ -7,6 +7,7 @@ import "@testing-library/jest-dom";
 import Hero from "../src/landing_page/home/Hero.jsx";
 
 // Hero component test
+// Vaibhav Araikar
 describe("Hero Component", () => {
   test("renders the Hero component with correct content", () => {
     render(<Hero />);
