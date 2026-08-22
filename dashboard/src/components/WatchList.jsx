@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
+import { useRequireAuth } from "../Users/useRequireAuth";
 
 import { Tooltip, Grow } from "@mui/material";
 // tooltip se hover krne par icons aayenge
@@ -111,9 +112,20 @@ const WatchListItem = ({ stock }) => {
 
 const WatchListActions = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
+  const requireAuth = useRequireAuth();
 
+  // Buy/Sell are gated: logged-out users get bounced to /login and land
+  // back here automatically after signing in. Analytics stays ungated.
   const handleBuyClick = () => {
-    generalContext.openBuyWindow(uid);
+    requireAuth(() => generalContext.openBuyWindow(uid));
+  };
+
+  const handleSellClick = () => {
+    requireAuth(() => {
+      // TODO: wire this up once you build a SellActionWindow,
+      // same pattern as openBuyWindow above.
+      console.log("sell flow for", uid);
+    });
   };
 
   return (
@@ -134,6 +146,7 @@ const WatchListActions = ({ uid }) => {
           placement="top"
           arrow
           TransitionComponent={Grow}
+          onClick={handleSellClick}
         >
           <button className="sell">Sell</button>
         </Tooltip>

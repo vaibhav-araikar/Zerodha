@@ -1,5 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Eye, EyeOff, TrendingUp, TrendingDown, ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
+import {
+  Eye,
+  EyeOff,
+  TrendingUp,
+  TrendingDown,
+  ArrowRight,
+  Check,
+  ShieldCheck,
+} from "lucide-react";
+import { useAuth } from "./AuthContext";
 
 /**
  * AuthPage — trading platform login / signup / forgot-password flow
@@ -28,7 +38,7 @@ function useLiveTicker() {
           const next = +(r.price + drift).toFixed(2);
           const chg = +(r.chg + (Math.random() - 0.5) * 0.05).toFixed(2);
           return { ...r, price: next, chg };
-        })
+        }),
       );
     }, 1800);
     return () => clearInterval(id);
@@ -40,10 +50,15 @@ function TickerRow({ row }) {
   const up = row.chg >= 0;
   return (
     <div className="flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3">
-      <span className="text-sm font-medium tracking-wide text-slate-200">{row.sym}</span>
+      <span className="text-sm font-medium tracking-wide text-slate-200">
+        {row.sym}
+      </span>
       <div className="flex items-center gap-3">
         <span className="font-mono text-sm text-slate-300">
-          {row.price.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          {row.price.toLocaleString("en-IN", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}
         </span>
         <span
           className={`flex items-center gap-1 text-xs font-semibold ${
@@ -92,7 +107,9 @@ function BrandPanel() {
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#387ED1] font-bold text-white">
             K
           </div>
-          <span className="text-xl font-semibold tracking-tight">Kite<span className="text-[#387ED1]">Clone</span></span>
+          <span className="text-xl font-semibold tracking-tight">
+            Kite<span className="text-[#387ED1]">Clone</span>
+          </span>
         </div>
 
         <h1 className="mt-16 max-w-sm text-[2.15rem] font-semibold leading-[1.15] tracking-tight text-white">
@@ -122,13 +139,25 @@ function BrandPanel() {
   );
 }
 
-function TextField({ label, type = "text", value, onChange, placeholder, error, right }) {
+function TextField({
+  label,
+  type = "text",
+  value,
+  onChange,
+  placeholder,
+  error,
+  right,
+}) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-[13px] font-medium text-slate-700">{label}</span>
+      <span className="mb-1.5 block text-[13px] font-medium text-slate-700">
+        {label}
+      </span>
       <div
         className={`flex items-center rounded-lg border bg-white px-3.5 transition ${
-          error ? "border-rose-400 ring-1 ring-rose-100" : "border-slate-300 focus-within:border-[#387ED1] focus-within:ring-2 focus-within:ring-[#387ED1]/15"
+          error
+            ? "border-rose-400 ring-1 ring-rose-100"
+            : "border-slate-300 focus-within:border-[#387ED1] focus-within:ring-2 focus-within:ring-[#387ED1]/15"
         }`}
       >
         <input
@@ -140,7 +169,11 @@ function TextField({ label, type = "text", value, onChange, placeholder, error, 
         />
         {right}
       </div>
-      {error && <span className="mt-1 block text-xs font-medium text-rose-500">{error}</span>}
+      {error && (
+        <span className="mt-1 block text-xs font-medium text-rose-500">
+          {error}
+        </span>
+      )}
     </label>
   );
 }
@@ -162,6 +195,9 @@ function LoginForm({ onSwitch }) {
   const [showPin, setShowPin] = useState(false);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const submit = (e) => {
     e.preventDefault();
@@ -171,9 +207,12 @@ function LoginForm({ onSwitch }) {
     setErrors(next);
     if (Object.keys(next).length) return;
     setLoading(true);
+    // Replace this block with your real login API call.
     setTimeout(() => {
       setLoading(false);
-      console.log("login submit", { userId, pin });
+      login({ userId }); // marks the session as authenticated
+      const redirectTo = location.state?.from || "/dashboard";
+      navigate(redirectTo, { replace: true });
     }, 900);
   };
 
@@ -219,7 +258,11 @@ function LoginForm({ onSwitch }) {
       </PrimaryButton>
       <p className="text-center text-[13px] text-slate-500">
         New here?{" "}
-        <button type="button" onClick={() => onSwitch("signup")} className="font-semibold text-[#387ED1] hover:underline">
+        <button
+          type="button"
+          onClick={() => onSwitch("signup")}
+          className="font-semibold text-[#387ED1] hover:underline"
+        >
           Create an account
         </button>
       </p>
@@ -228,7 +271,13 @@ function LoginForm({ onSwitch }) {
 }
 
 function SignupForm({ onSwitch }) {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", pan: "", password: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    pan: "",
+    password: "",
+  });
   const [errors, setErrors] = useState({});
   const [done, setDone] = useState(false);
 
@@ -240,7 +289,8 @@ function SignupForm({ onSwitch }) {
     if (!form.name.trim()) next.name = "Enter your full name";
     if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = "Enter a valid email";
     if (!/^\d{10}$/.test(form.phone)) next.phone = "10-digit mobile number";
-    if (!/^[A-Z]{5}\d{4}[A-Z]$/.test(form.pan.toUpperCase())) next.pan = "Format: ABCDE1234F";
+    if (!/^[A-Z]{5}\d{4}[A-Z]$/.test(form.pan.toUpperCase()))
+      next.pan = "Format: ABCDE1234F";
     if (form.password.length < 8) next.password = "At least 8 characters";
     setErrors(next);
     if (Object.keys(next).length) return;
@@ -254,9 +304,13 @@ function SignupForm({ onSwitch }) {
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50">
           <Check className="text-emerald-500" size={24} />
         </div>
-        <h3 className="text-lg font-semibold text-slate-900">Application received</h3>
+        <h3 className="text-lg font-semibold text-slate-900">
+          Application received
+        </h3>
         <p className="mt-1.5 max-w-xs text-sm text-slate-500">
-          We've sent a verification link to <span className="font-medium text-slate-700">{form.email}</span>. Confirm it to continue KYC.
+          We've sent a verification link to{" "}
+          <span className="font-medium text-slate-700">{form.email}</span>.
+          Confirm it to continue KYC.
         </p>
         <button
           onClick={() => onSwitch("login")}
@@ -270,19 +324,55 @@ function SignupForm({ onSwitch }) {
 
   return (
     <form onSubmit={submit} className="space-y-4">
-      <TextField label="Full name" value={form.name} onChange={set("name")} placeholder="As per PAN" error={errors.name} />
-      <TextField label="Email" type="email" value={form.email} onChange={set("email")} placeholder="you@example.com" error={errors.email} />
+      <TextField
+        label="Full name"
+        value={form.name}
+        onChange={set("name")}
+        placeholder="As per PAN"
+        error={errors.name}
+      />
+      <TextField
+        label="Email"
+        type="email"
+        value={form.email}
+        onChange={set("email")}
+        placeholder="you@example.com"
+        error={errors.email}
+      />
       <div className="grid grid-cols-2 gap-3">
-        <TextField label="Mobile number" value={form.phone} onChange={set("phone")} placeholder="98765 43210" error={errors.phone} />
-        <TextField label="PAN" value={form.pan} onChange={set("pan")} placeholder="ABCDE1234F" error={errors.pan} />
+        <TextField
+          label="Mobile number"
+          value={form.phone}
+          onChange={set("phone")}
+          placeholder="98765 43210"
+          error={errors.phone}
+        />
+        <TextField
+          label="PAN"
+          value={form.pan}
+          onChange={set("pan")}
+          placeholder="ABCDE1234F"
+          error={errors.pan}
+        />
       </div>
-      <TextField label="Set password" type="password" value={form.password} onChange={set("password")} placeholder="8+ characters" error={errors.password} />
+      <TextField
+        label="Set password"
+        type="password"
+        value={form.password}
+        onChange={set("password")}
+        placeholder="8+ characters"
+        error={errors.password}
+      />
       <PrimaryButton type="submit">
         Continue <ArrowRight size={16} />
       </PrimaryButton>
       <p className="text-center text-[13px] text-slate-500">
         Already have an account?{" "}
-        <button type="button" onClick={() => onSwitch("login")} className="font-semibold text-[#387ED1] hover:underline">
+        <button
+          type="button"
+          onClick={() => onSwitch("login")}
+          className="font-semibold text-[#387ED1] hover:underline"
+        >
           Log in
         </button>
       </p>
@@ -323,9 +413,16 @@ function ForgotPasswordForm({ onSwitch }) {
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50">
           <Check className="text-emerald-500" size={24} />
         </div>
-        <h3 className="text-lg font-semibold text-slate-900">Password updated</h3>
-        <p className="mt-1.5 text-sm text-slate-500">You can now log in with your new password.</p>
-        <button onClick={() => onSwitch("login")} className="mt-6 text-[13px] font-semibold text-[#387ED1] hover:underline">
+        <h3 className="text-lg font-semibold text-slate-900">
+          Password updated
+        </h3>
+        <p className="mt-1.5 text-sm text-slate-500">
+          You can now log in with your new password.
+        </p>
+        <button
+          onClick={() => onSwitch("login")}
+          className="mt-6 text-[13px] font-semibold text-[#387ED1] hover:underline"
+        >
           Back to login
         </button>
       </div>
@@ -336,14 +433,26 @@ function ForgotPasswordForm({ onSwitch }) {
     <div className="space-y-4">
       <div className="flex gap-1.5">
         {[1, 2, 3].map((n) => (
-          <div key={n} className={`h-1 flex-1 rounded-full ${n <= step ? "bg-[#387ED1]" : "bg-slate-200"}`} />
+          <div
+            key={n}
+            className={`h-1 flex-1 rounded-full ${n <= step ? "bg-[#387ED1]" : "bg-slate-200"}`}
+          />
         ))}
       </div>
 
       {step === 1 && (
         <form onSubmit={requestOtp} className="space-y-4">
-          <p className="text-sm text-slate-500">Enter the email linked to your account. We'll send a 6-digit code.</p>
-          <TextField label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" error={error} />
+          <p className="text-sm text-slate-500">
+            Enter the email linked to your account. We'll send a 6-digit code.
+          </p>
+          <TextField
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+            error={error}
+          />
           <PrimaryButton type="submit">Send code</PrimaryButton>
         </form>
       )}
@@ -351,23 +460,43 @@ function ForgotPasswordForm({ onSwitch }) {
       {step === 2 && (
         <form onSubmit={verifyOtp} className="space-y-4">
           <p className="text-sm text-slate-500">
-            Enter the code sent to <span className="font-medium text-slate-700">{email}</span>.
+            Enter the code sent to{" "}
+            <span className="font-medium text-slate-700">{email}</span>.
           </p>
-          <TextField label="6-digit code" value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))} placeholder="000000" error={error} />
+          <TextField
+            label="6-digit code"
+            value={otp}
+            onChange={(e) =>
+              setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))
+            }
+            placeholder="000000"
+            error={error}
+          />
           <PrimaryButton type="submit">Verify code</PrimaryButton>
         </form>
       )}
 
       {step === 3 && (
         <form onSubmit={resetPw} className="space-y-4">
-          <TextField label="New password" type="password" value={pw} onChange={(e) => setPw(e.target.value)} placeholder="8+ characters" error={error} />
+          <TextField
+            label="New password"
+            type="password"
+            value={pw}
+            onChange={(e) => setPw(e.target.value)}
+            placeholder="8+ characters"
+            error={error}
+          />
           <PrimaryButton type="submit">Reset password</PrimaryButton>
         </form>
       )}
 
       <p className="text-center text-[13px] text-slate-500">
         Remembered it?{" "}
-        <button type="button" onClick={() => onSwitch("login")} className="font-semibold text-[#387ED1] hover:underline">
+        <button
+          type="button"
+          onClick={() => onSwitch("login")}
+          className="font-semibold text-[#387ED1] hover:underline"
+        >
           Back to login
         </button>
       </p>
@@ -376,13 +505,23 @@ function ForgotPasswordForm({ onSwitch }) {
 }
 
 const TITLES = {
-  login: { h: "Welcome back", s: "Log in to access your dashboard, positions, and orders." },
-  signup: { h: "Open a free account", s: "Takes about 5 minutes. Keep your PAN and mobile handy." },
-  forgot: { h: "Reset password", s: "We'll get you back in within a couple of minutes." },
+  login: {
+    h: "Welcome back",
+    s: "Log in to access your dashboard, positions, and orders.",
+  },
+  signup: {
+    h: "Open a free account",
+    s: "Takes about 5 minutes. Keep your PAN and mobile handy.",
+  },
+  forgot: {
+    h: "Reset password",
+    s: "We'll get you back in within a couple of minutes.",
+  },
 };
 
 export default function AuthPage() {
-  const [view, setView] = useState("login");
+  const location = useLocation();
+  const [view, setView] = useState(location.state?.view || "login");
   const { h, s } = TITLES[view];
 
   return (
@@ -392,12 +531,18 @@ export default function AuthPage() {
       <div className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-[380px]">
           <div className="mb-8 flex items-center gap-2.5 lg:hidden">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#387ED1] text-sm font-bold text-white">K</div>
-            <span className="text-lg font-semibold text-slate-900">KiteClone</span>
+            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#387ED1] text-sm font-bold text-white">
+              K
+            </div>
+            <span className="text-lg font-semibold text-slate-900">
+              KiteClone
+            </span>
           </div>
 
           <div className="mb-7">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">{h}</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              {h}
+            </h2>
             <p className="mt-1.5 text-sm text-slate-500">{s}</p>
           </div>
 
@@ -408,7 +553,9 @@ export default function AuthPage() {
                   key={v}
                   onClick={() => setView(v)}
                   className={`flex-1 rounded-md py-2 text-[13px] font-semibold capitalize transition ${
-                    view === v ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+                    view === v
+                      ? "bg-white text-slate-900 shadow-sm"
+                      : "text-slate-500 hover:text-slate-700"
                   }`}
                 >
                   {v === "login" ? "Log in" : "Sign up"}
@@ -422,8 +569,9 @@ export default function AuthPage() {
           {view === "forgot" && <ForgotPasswordForm onSwitch={setView} />}
 
           <p className="mt-8 text-center text-[11px] leading-relaxed text-slate-400">
-            By continuing you agree to the Terms and acknowledge the Privacy Policy.
-            This is a demo UI and not affiliated with any real brokerage.
+            By continuing you agree to the Terms and acknowledge the Privacy
+            Policy. This is a demo UI and not affiliated with any real
+            brokerage.
           </p>
         </div>
       </div>

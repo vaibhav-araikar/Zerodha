@@ -1,20 +1,29 @@
 import React, { useState } from "react";
-
-import { Link } from "react-router-dom";
+import "./Menu.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../Users/AuthContext";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const { isAuthenticated, user, logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
   };
   // basically hum dashboard pr click karenge to 0 pass karenge and orders pr click karenge to 1 pass karenge and so on...
 
-  const handleProfileClick = (index) => {
+  const handleProfileClick = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
   // currently true hai to false hoga or false hai to true ho jayega
+
+  const handleLogout = () => {
+    logout();
+    setIsProfileDropdownOpen(false);
+    navigate("/login");
+  };
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
@@ -94,10 +103,41 @@ const Menu = () => {
           </li>
         </ul>
         <hr />
-        <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
-        </div>
+
+        {isAuthenticated ? (
+          <div className="profile" onClick={handleProfileClick}>
+            <div className="avatar">
+              {(user?.userId || "U").slice(0, 2).toUpperCase()}
+            </div>
+            <p className="username">{user?.userId || "USER"}</p>
+
+            {isProfileDropdownOpen && (
+              <div className="profile-dropdown">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleLogout();
+                  }}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="auth-buttons">
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <button className="login-btn">Login</button>
+            </Link>
+            <Link
+              to="/login"
+              state={{ view: "signup" }}
+              style={{ textDecoration: "none" }}
+            >
+              <button className="signup-btn">Signup</button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

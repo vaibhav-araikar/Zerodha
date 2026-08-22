@@ -1,0 +1,78 @@
+/* --- Auth buttons (logged-out state, top menu) --- */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1px solid #387ed1;
+  color: #387ed1;
+}
+
+.login-btn:hover {
+  background: rgba(56, 126, 209, 0.08);
+}
+
+.signup-btn {
+  background: #387ed1;
+  border: 1px solid #387ed1;
+  color: #fff;
+}
+
+.signup-btn:hover {
+  background: #2f6cb3;
+  border-color: #2f6cb3;
+}
+
+/* --- Profile dropdown (logged-in state) --- */
+.profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+  background: #fff;
+  border: 1px solid #e2e5e9;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.15s ease;
+}
+
+.profile-dropdown button:hover {
+  background: #f5f7fa;
+  color: #d9534f;
+}
