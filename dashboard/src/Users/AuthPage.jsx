@@ -10,6 +10,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { useAuth } from "./AuthContext";
+import kiteLogo from "./kite.png";
 
 /**
  * AuthPage — trading platform login / signup / forgot-password flow
@@ -104,12 +105,11 @@ function BrandPanel() {
 
       <div className="relative z-10">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#387ED1] font-bold text-white">
-            K
+          <div className="flex h-9 w-9 items-center justify-center rounded-md font-bold text-white">
+            <img src={kiteLogo} alt="Kite" className="h-7 w-7 object-contain" />
           </div>
-          <span className="text-xl font-semibold tracking-tight">
-            Kite<span className="text-[#387ED1]">Clone</span>
-          </span>
+
+          <span className="text-xl font-semibold tracking-tight">Kite</span>
         </div>
 
         <h1 className="mt-16 max-w-sm text-[2.15rem] font-semibold leading-[1.15] tracking-tight text-white">
@@ -532,11 +532,9 @@ export default function AuthPage() {
         <div className="w-full max-w-[380px]">
           <div className="mb-8 flex items-center gap-2.5 lg:hidden">
             <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#387ED1] text-sm font-bold text-white">
-              K
+              <img src={kiteLogo} alt="KiteClone" className="h-4 w-4" />
             </div>
-            <span className="text-lg font-semibold text-slate-900">
-              KiteClone
-            </span>
+            <span className="text-lg font-semibold text-slate-900">Kite</span>
           </div>
 
           <div className="mb-7">
