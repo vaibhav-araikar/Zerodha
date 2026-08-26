@@ -576,6 +576,3 @@ export default function AuthPage() {
     </div>
   );
 }
-
-// Vaibhav Araikar
-// B.Tech: Electrical Engineering
