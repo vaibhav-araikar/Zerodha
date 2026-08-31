@@ -576,5 +576,3 @@ export default function AuthPage() {
     </div>
   );
 }
-
-// 600 line of code completed
