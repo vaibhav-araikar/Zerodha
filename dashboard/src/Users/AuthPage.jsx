@@ -576,6 +576,3 @@ export default function AuthPage() {
     </div>
   );
 }
-
-// SMVM
-// G H Raisoni COllege of Engineering, Nagpur
