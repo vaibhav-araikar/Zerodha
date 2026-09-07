@@ -576,6 +576,3 @@ export default function AuthPage() {
     </div>
   );
 }
-
-// Vaibhav Araikar
-// G H Raisoni College of Engineering, Nagpur
